@@ -460,9 +460,9 @@ class Main:
             usock.write("echo %1\n")
             usock.write("echo So far so good... now Lets Broadcast the stuff were play'n\n")
 	    if (Addon.getSetting( "vstrm_type" ) == "udp"):
-	        usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet --started-from-file --playlist-enqueue \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+":"+streaming_port+"} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
+	        usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet --started-from-file --playlist-enqueue \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+":"+streaming_port+"} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
 	    if (Addon.getSetting( "vstrm_type" ) == "rtp"):
-	        usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet --started-from-file --playlist-enqueue \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
+	        usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet --started-from-file --playlist-enqueue \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
             usock.write("\n")
 	    usock.write("taskkill /F /IM vlc.exe\n")
 	    if (Addon.getSetting( "default_vp" ) == "MR-Video_Stream"):
@@ -485,9 +485,9 @@ class Main:
                 usock.write("echo %1\n")
                 usock.write("echo So far so good... now Lets Broadcast the stuff were play'n\n")
 		if (Addon.getSetting( "vstrm_type" ) == "udp"):
-		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+":"+streaming_port+"} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
+		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+":"+streaming_port+"} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
 		if (Addon.getSetting( "vstrm_type" ) == "rtp"):
-		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
+		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet \"%1\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
                 usock.write("\n")
 	        usock.write("taskkill /F /IM vlc.exe\n")
 	        if (Addon.getSetting( "default_vp" ) == "MR-Video_Stream"):
@@ -508,9 +508,9 @@ class Main:
                 usock.write("echo %1\n")
                 usock.write("echo So far so good... now Lets Broadcast the stuff were play'n\n")
 		if (Addon.getSetting( "vstrm_type" ) == "udp"):
-		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet dvdsimple://"+dvd_loc+" --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+":"+streaming_port+"} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
+		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet dvdsimple://"+dvd_loc+" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+":"+streaming_port+"} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
 		if (Addon.getSetting( "vstrm_type" ) == "rtp"):
-		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet dvdsimple://"+dvd_loc+" --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
+		    usock.write("\""+vlc_loc+"\" -I dummy --dummy-quiet dvdsimple://"+dvd_loc+" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts} --netsync-master --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --file-caching=300\n")
                 usock.write("\n")
 	        usock.write("taskkill /F /IM vlc.exe\n")
 	        if (Addon.getSetting( "default_vp" ) == "MR-Video_Stream"):
@@ -540,8 +540,8 @@ class Main:
                     usock.write("screen -d -m -S MAV-Loopback\n")
                 usock.write("screen -d -m -S MAV-Streamer\n")
 		if (Addon.getSetting( "playlocal" ) == "true"):
-                    usock.write("screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+":8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
-                usock.write("screen -S MAV-Streamer -p 0 -X exec "+vlc_loc+" --intf dummy rtp://@127.0.0.1:46998 --rtp-caching=1000 --extraintf=http --http-host "+localhost+":8084 --sout=\'#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}\' --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --sout-keep\n")
+                    usock.write("screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+" --http-port 8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
+                usock.write("screen -S MAV-Streamer -p 0 -X exec "+vlc_loc+" --intf dummy rtp://@127.0.0.1:46998 --rtp-caching=1000 --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=\'#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}\' --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --sout-keep\n")
                 usock.write("fi\n")
                 usock.close()
 		os.system("chmod +x "+STREAMER+"") 
@@ -555,31 +555,31 @@ class Main:
                 usock.write("if [[ \"$1\" == dvd://* ]]; then\n")
 		if (Addon.getSetting( "playlocal" ) == "true"):
                     usock.write("        screen -d -m -S MAV-Loopback\n")
-                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+":8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
-                usock.write("	"+vlc_loc+" --intf dummy dvdsimple:// --dvdread-caching=1000 --start-time=5 --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout='#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}' --sout-rtp-sap --sout-rtp-name=TESLaptop --sout-standard-sap --sout-standard-name=xbmc_TESLaptop --sout-standard-group=Multiroom_AV && killall screen\n")
+                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+" --http-port 8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
+                usock.write("	"+vlc_loc+" --intf dummy dvdsimple:// --dvdread-caching=1000 --start-time=5 --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout='#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}' --sout-rtp-sap --sout-rtp-name=TESLaptop --sout-standard-sap --sout-standard-name=xbmc_TESLaptop --sout-standard-group=Multiroom_AV && killall screen\n")
                 usock.write("\n")
 		if (Addon.getSetting( "playlocal" ) == "true"):
                     usock.write("        screen -d -m -S MAV-Loopback\n")
 		if (Addon.getSetting( "dedicated" ) == "true"):
                     usock.write("        screen -d -m -S MAV-Streamer\n")
 		if (Addon.getSetting( "playlocal" ) == "true"):
-                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+":8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
+                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+" --http-port 8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
 		if (Addon.getSetting( "dedicated" ) == "true"):
-                    usock.write("        screen -S MAV-Streamer -p 0 -X exec "+vlc_loc+" --intf dummy rtp://@127.0.0.1:46998 --rtp-caching=1000 --extraintf=http --http-host "+localhost+":8084 --sout=\'#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}\' --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --sout-keep\n")
+                    usock.write("        screen -S MAV-Streamer -p 0 -X exec "+vlc_loc+" --intf dummy rtp://@127.0.0.1:46998 --rtp-caching=1000 --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=\'#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}\' --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --sout-keep\n")
                 usock.write("else\n")
 		if (Addon.getSetting( "playlocal" ) == "true"):
                     usock.write("        screen -d -m -S MAV-Loopback\n")
-                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+":8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
-                usock.write("	/usr/bin/vlc --intf dummy \"$1\" --play-and-exit --extraintf=http --http-host "+localhost+":8084 --sout='#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}' --sout-rtp-sap --sout-rtp-name=TESLaptop --sout-standard-sap --sout-standard-name=xbmc_TESLaptop --sout-standard-group=Multiroom_AV --sout-keep && killall screen\n")
+                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+" --http-port 8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
+                usock.write("	/usr/bin/vlc --intf dummy \"$1\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8084 --sout='#"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}' --sout-rtp-sap --sout-rtp-name=TESLaptop --sout-standard-sap --sout-standard-name=xbmc_TESLaptop --sout-standard-group=Multiroom_AV --sout-keep && killall screen\n")
                 usock.write("\n")
 		if (Addon.getSetting( "playlocal" ) == "true"):
                     usock.write("        screen -d -m -S MAV-Loopback\n")
 		if (Addon.getSetting( "dedicated" ) == "true"):
                     usock.write("        screen -d -m -S MAV-Streamer\n")
 		if (Addon.getSetting( "playlocal" ) == "true"):
-                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+":8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
+                    usock.write("        screen -S MAV-Loopback -p 0 -X exec "+vlc_loc+" --intf dummy --extraintf=http --http-host "+localhost+" --http-port 8085 "+vstrm_type+"://@"+streaming_ip+":"+streaming_port+" --netsync-master-ip="+localhost+" --netsync-timeout=500 --fullscreen --file-caching="+audio_fc+"\n")
 		if (Addon.getSetting( "dedicated" ) == "true"):
-                    usock.write("        screen -S MAV-Streamer -p 0 -X exec "+vlc_loc+" --intf dummy rtp://@127.0.0.1:46998 --rtp-caching=1000 --extraintf=http --http-host "+localhost+":8084 --sout=\'#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}\' --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --sout-keep\n")
+                    usock.write("        screen -S MAV-Streamer -p 0 -X exec "+vlc_loc+" --intf dummy rtp://@127.0.0.1:46998 --rtp-caching=1000 --extraintf=http --http-host "+localhost+" --http-port 8084 --sout=\'#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:"+vstrm_type+"{dst="+streaming_ip+",port="+streaming_port+",mux=ts}\' --sout-rtp-sap --sout-rtp-name="+sap_name+" --sout-standard-sap --sout-standard-name=xbmc_"+sap_name+" --sout-standard-group=Multiroom_AV --sout-keep\n")
                     usock.write("\n")
                 usock.write("fi\n")
                 usock.close()
@@ -720,14 +720,14 @@ class Main:
 
             if (sys.platform == 'win32'):
                 usock.write("      <filename>"+vlc_loc+"</filename>\n")
-		usock.write("      <args>--intf dummy --dummy-quiet \"{1}\" --play-and-exit --extraintf=http --http-host="+localhost+":8085  --netsync-master --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen </args>\n")
+		usock.write("      <args>--intf dummy --dummy-quiet \"{1}\" --play-and-exit --extraintf=http --http-host="+localhost+" --http-port 8085  --netsync-master --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen </args>\n")
             else:
             	if (sys.platform.startswith('linux')):
             	    usock.write("      <filename>"+vlc_loc+"</filename>\n")
- 		    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+":8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen</args>\n")
+ 		    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen</args>\n")
             	else: 
             	    usock.write("      <filename>"+vlc_loc+"</filename>\n")
-                    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+":8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen</args>\n")
+                    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen</args>\n")
 
             usock.write("      <hidexbmc>false</hidexbmc>\n")
             usock.write("      <hideconsole>true</hideconsole>\n")
@@ -738,12 +738,12 @@ class Main:
             usock.write("      <filename>"+vlc_loc+"</filename>\n")
 
             if (sys.platform == 'win32'):
-		usock.write("      <args>--intf dummy --dummy-quiet \"{1}\" --play-and-exit --extraintf=http --http-host="+localhost+":8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen --audio-visual visual --effect-list "+avisualize+"</args>\n")
+		usock.write("      <args>--intf dummy --dummy-quiet \"{1}\" --play-and-exit --extraintf=http --http-host="+localhost+" --http-port 8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen --audio-visual visual --effect-list "+avisualize+"</args>\n")
             else:
             	if (sys.platform.startswith('linux')):
- 		    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+":8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen --audio-visual visual --effect-list "+avisualize+"</args>\n")
+ 		    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen --audio-visual visual --effect-list "+avisualize+"</args>\n")
             	else: 
-                    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+":8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen --audio-visual visual --effect-list "+avisualize+"</args>\n")
+                    usock.write("      <args>--intf dummy \"{1}\" --play-and-exit --extraintf=http --http-host "+localhost+" --http-port 8085 --netsync-master-ip="+mstr_sync+" --netsync-timeout=500 --file-caching=0 --fullscreen --audio-visual visual --effect-list "+avisualize+"</args>\n")
 
             usock.write("      <hidexbmc>false</hidexbmc>\n")
             usock.write("      <hideconsole>true</hideconsole>\n")
@@ -1062,10 +1062,10 @@ class Main:
             else:
                 if (sys.platform.startswith('linux')):
  		    usock.write("\t\t<application>killall vlc | killall screen</application>\n")
-		    os.system("cp "+MAVFOO+"default.pa "+pulseloc+".pulse/default.pa")
+		    os.system("cp "+MAVFOO+"default.pa "+pulseloc+".config/pulse/default.pa")
                 else: 
                     usock.write("\t\t<application>killall vlc | killall screen</application>\n")
-		    os.system("cp "+MAVFOO+"default.pa "+pulseloc+".pulse/default.pa")
+		    os.system("cp "+MAVFOO+"default.pa "+pulseloc+".config/pulse/default.pa")
 
 	    usock.write("\t\t<args></args>\n")
             usock.write("\t\t<streamsrc></streamsrc>\n")
@@ -1129,10 +1129,10 @@ class Main:
             subprocess.Popen([r"copy",r""+MAVFOO+"autoexec.py",r""+AUTOEXEC+""],shell=True)
         else:
             if (sys.platform.startswith('linux')):
-	        os.system("cp "+MAVFOO+"default.pa "+PULSE+".pulse/default.pa")
+	        os.system("cp "+MAVFOO+"default.pa "+PULSE+".config/pulse/default.pa")
 	        os.system("cp "+MAVFOO+"autoexec.py "+AUTOEXEC+"")
 	    else:
-	        os.system("cp "+MAVFOO+"default.pa "+PULSE+".pulse/default.pa")
+	        os.system("cp "+MAVFOO+"default.pa "+PULSE+".config/pulse/default.pa")
 	        os.system("cp "+MAVFOO+"autoexec.py "+AUTOEXEC+"")
 	 	 
 	self._save_srcpls()
